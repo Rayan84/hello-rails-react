@@ -13,11 +13,7 @@ function rootReducer(state, action) {
   }
 }
 
-export default function configureStore() {
-  const store = createStore(
-    rootReducer,
-    initialState,
-    applyMiddleware(thunk)
+  const store = createStore(rootReducer, initialState, applyMiddleware(thunk)
   );
-  return store;
-}
+
+  export default store;

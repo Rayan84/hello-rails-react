@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'greetings', to: 'greetings#index'
   end
 
-  get '*page', to: 'stati#index', constrains: ->(reg) do
+  get '*page', to: 'static#index', constrains: ->(reg) do
     !req.xhr? && req.format.html?
   end
 end
