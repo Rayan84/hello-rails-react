@@ -1,19 +1,12 @@
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
+import { combineReducers, applyMiddleware, createStore } from 'redux';
+import reduxThunk from 'redux-thunk';
+import logger from 'redux-logger';
+import greetingsReducer from '../redux/reducers/greetingsReducer';
 
-const initialState = {
-  greetings: []
-};
+// const reducer = combineReducers({
+//   greeting: greetingsReducer,  
+// });
 
-function rootReducer(state, action) {
-  console.log(action.type);
-  switch(action.type) {
-    default:
-      return state
-  }
-}
+const store = createStore(greetingsReducer, applyMiddleware(logger, reduxThunk));
 
-  const store = createStore(rootReducer, initialState, applyMiddleware(thunk)
-  );
-
-  export default store;
+export default store;
