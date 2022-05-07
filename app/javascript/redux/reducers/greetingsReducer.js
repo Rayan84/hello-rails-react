@@ -1,8 +1,9 @@
 const initialState = {
   loading: false,
-  data: '',
-  error: ''
-}
+  data: 'initial greeting',
+  error: '',
+};
+
 
 const greetingsReducer = (state = initialState, action) => {
   console.log('greetingsReducer called...')
@@ -17,15 +18,17 @@ const greetingsReducer = (state = initialState, action) => {
   }
 
     case 'GET_GREETINGS_SUCCESS': {
-      console.log('GET_Greetings_Success, report from reducer')
-      return {
+      console.log('GET_Greetings_Success, report from reducer');
+      console.log(action.payload.message);
+      const newState = {
         loading: false,
-        data: action.payload,
+        data: action.payload.message,
         error: ''
-      }
+      };
+      return newState;
     };
 
-    dafault:
+    default:
     console.log('default state...')
     return state;
   }

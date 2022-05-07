@@ -25,8 +25,10 @@ const getGreetings = () => (dispatch) => {
   dispatch(getGreetingsRequest());
   fetch(URL)
   .then(response => response.json())
-  .then(data => console.log(data.message))
-  .then(json => dispatch(getGreetingsSuccess(data.json)))
+  .then(json => dispatch(getGreetingsSuccess(json)))
+
+  .then(json => console.log(json.message))
+  //.then(json => dispatch(getGreetingsSuccess(response.json)))
   .catch(error => console.log(error));
 
 };
