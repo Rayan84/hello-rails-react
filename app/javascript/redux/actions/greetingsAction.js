@@ -21,19 +21,11 @@ export const getGreetingsFail = () => {
 }
 
 const getGreetings = () => (dispatch) => {
-  console.log('getGreetings function launched...')
   dispatch(getGreetingsRequest());
   fetch(URL)
   .then(response => response.json())
   .then(json => dispatch(getGreetingsSuccess(json)))
-
-  .then(json => console.log(json.message))
-  //.then(json => dispatch(getGreetingsSuccess(response.json)))
   .catch(error => console.log(error));
-
 };
 
-// const getGreetings = () => {
-//   console.log('text from new getGreetings...')
-// }
 export default getGreetings;

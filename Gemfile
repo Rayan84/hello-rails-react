@@ -77,4 +77,4 @@ end
 
 gem 'rubocop', '~> 1.28'
 
-gem "rack-cors", "~> 1.1"
+gem 'rack-cors', '~> 1.1'

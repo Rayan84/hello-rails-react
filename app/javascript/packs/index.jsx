@@ -3,12 +3,12 @@
 // of the page.
 
 import React from 'react';
+
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from '../components/App';
 import store from '../redux/configureStore';
 import getGreetings from '../redux/actions/greetingsAction';
-
 
 store.dispatch(getGreetings());
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,5 +21,3 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(document.createElement('div')),
   )
 })
-
-
